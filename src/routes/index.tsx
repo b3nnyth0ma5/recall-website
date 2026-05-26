@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Recall — Capture and rediscover what matters" },
-      { name: "description", content: "Recall is a simple app for saving notes, photos, and places — then finding them again, instantly." },
+      { name: "description", content: "Recall is a simple app for saving text, photos, and places — then finding them again, instantly." },
       { property: "og:title", content: "Recall — Capture and rediscover what matters" },
       { property: "og:description", content: "Save notes, photos, and places. Categorize them. Search them. Remember them." },
       { property: "og:url", content: "/" },
@@ -30,17 +30,17 @@ function Index() {
                 Now in early access
               </span>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
-                Capture the moment. <span className="text-primary">Recall it later.</span>
+                Capture anything. <span className="text-primary">Recall it later.</span>
               </h1>
               <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-                Recall is a quiet notebook for the things worth remembering — a thought, a photo, a place. Save it in seconds. Find it in one.
+                Recall is your second brain for anything you want to remember — a thought, a URL, an Insta post, photos, a place. Save it in seconds.Recall it later.
               </p>
               <div className="mt-8 flex flex-wrap gap-3" id="get-app">
                 <a
-                  href="mailto:hello@recall.app?subject=Recall%20early%20access"
+                  href="https://apps.apple.com/au/app/instagram/id389801252"
                   className="inline-flex h-11 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
-                  Get the app
+                  Get Recall
                 </a>
                 <Link
                   to="/features"
@@ -74,9 +74,9 @@ function Index() {
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: Images, title: "Text + images", body: "Write a thought. Attach one or many photos. No fuss." },
-                { icon: MapPin, title: "A place", body: "Drop a location so you remember where it happened." },
-                { icon: Tags, title: "Categories", body: "Group recalls by trip, project, mood — however you think." },
-                { icon: Search, title: "Instant search", body: "Find any recall by word, place, or tag. Right now." },
+                { icon: MapPin, title: "A place", body: "Add a location so you remember where it happened." },
+                { icon: Tags, title: "Categories", body: "Describe your category, let Recall keep the memories organised." },
+                { icon: Search, title: "Instant search", body: "Ask a question, let Recall do the answering." },
               ].map((f) => (
                 <div key={f.title} className="rounded-xl border border-border bg-card p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -93,13 +93,12 @@ function Index() {
         <section id="how" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-20">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">How it works</h2>
-            <p className="mt-3 text-muted-foreground">Three steps, then it's yours forever.</p>
+            <p className="mt-3 text-muted-foreground">Two steps, is all you need.</p>
           </div>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
-              { n: "01", t: "Create", d: "Open Recall, jot the moment, add photos, drop a pin." },
-              { n: "02", t: "Categorize", d: "Tag it so future-you knows exactly where to look." },
-              { n: "03", t: "Recall", d: "Search anything — a word, a place, a feeling. It surfaces." },
+              { n: "01", t: "Create", d: "Add a Recall - a note, a URL, some photos, a location." },
+              { n: "02", t: "Recall", d: "Search anything — a word, a place, a feeling. It surfaces." },
             ].map((s) => (
               <li key={s.n} className="border-l-2 border-primary pl-5">
                 <div className="text-sm font-mono text-primary">{s.n}</div>
@@ -113,16 +112,14 @@ function Index() {
         <section className="mx-auto max-w-6xl px-6 pb-24">
           <div className="rounded-2xl bg-primary px-8 py-12 text-primary-foreground md:px-14 md:py-16">
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Start keeping the things you'd hate to forget.
+              Start keeping the things you don't want to forget.
             </h2>
-            <p className="mt-3 max-w-xl text-primary-foreground/80">
-              Join the early access list and we'll send you a link the moment Recall is ready.
-            </p>
+            
             <a
-              href="mailto:hello@recall.app?subject=Recall%20early%20access"
+              href="https://apps.apple.com/au/app/instagram/id389801252"
               className="mt-7 inline-flex h-11 items-center rounded-md bg-background px-6 text-sm font-medium text-foreground hover:bg-background/90"
             >
-              Request access
+              Get Recall
             </a>
           </div>
         </section>
