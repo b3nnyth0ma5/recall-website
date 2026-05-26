@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Recall — Capture and rediscover what matters" },
-      { name: "description", content: "A quiet notebook for notes, photos, and places. Save it in seconds. Find it in one." },
-      { property: "og:title", content: "Recall" },
-      { property: "og:description", content: "Capture and rediscover what matters." },
+      { title: "Recall — The smart way to never forget" },
+      { name: "description", content: "Your AI-driven second brain. Save anything. Recall it when you need to remember." },
+      { property: "og:title", content: "Recall — The smart way to never forget" },
+      { property: "og:description", content: "Your AI-driven second brain. Save anything. Recall it when you need to remember." },
       { property: "og:site_name", content: "Recall" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Recall — The smart way to never forget" },
+      { name: "twitter:description", content: "Your AI-driven second brain. Save anything. Recall it when you need to remember." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/aeRtLKPkcQVpedOzyxL3rEcMMF43/social-images/social-1779800612733-recall_icon_2.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/aeRtLKPkcQVpedOzyxL3rEcMMF43/social-images/social-1779800612733-recall_icon_2.webp" },
     ],
     links: [
       {
