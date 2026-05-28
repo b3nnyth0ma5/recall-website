@@ -8,10 +8,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Recall — Capture and rediscover what matters" },
-      { name: "description", content: "Recall is a simple app for saving text, photos, and places — then finding them again, instantly." },
-      { property: "og:title", content: "Recall — Capture and rediscover what matters" },
-      { property: "og:description", content: "Save notes, photos, and places. Categorize them. Search them. Remember them." },
+      { title: "Recall — Capture anything. Recall it later." },
+      { name: "description", content: "Recall is your second brain. Save text, links, photos or places. When you need it, Recall it!" },
+      { property: "og:title", content: "Recall — Capture anythin. Recall it later." },
+      { property: "og:description", content: "Recall is your second brain. Save text, links, photos or places. When you need it, Recall it!" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -27,20 +27,20 @@ function Index() {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-                Now in early access
+                Coming soon
               </span>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-6xl">
                 Capture anything. <span className="text-primary">Recall it later.</span>
               </h1>
               <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-                Recall is your second brain for anything you want to remember — a thought, a URL, an Insta post, photos, a place. Save it in seconds.Recall it later.
+                Recall is your second brain for anything you want to remember — a thought, a URL, an Insta post, photos, a place. Save it in seconds. Recall it later.
               </p>
               <div className="mt-8 flex flex-wrap gap-3" id="get-app">
                 <a
                   href="https://apps.apple.com/au/app/instagram/id389801252"
                   className="inline-flex h-11 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
-                  Get Recall
+                  Coming soon
                 </a>
                 <Link
                   to="/features"
@@ -93,7 +93,7 @@ function Index() {
         <section id="how" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-20">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">How it works</h2>
-            <p className="mt-3 text-muted-foreground">Two steps, is all you need.</p>
+            <p className="mt-3 text-muted-foreground">Two steps> It's all you need.</p>
           </div>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
@@ -119,7 +119,7 @@ function Index() {
               href="https://apps.apple.com/au/app/instagram/id389801252"
               className="mt-7 inline-flex h-11 items-center rounded-md bg-background px-6 text-sm font-medium text-foreground hover:bg-background/90"
             >
-              Get Recall
+              Coming soon
             </a>
           </div>
         </section>
