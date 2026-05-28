@@ -19,11 +19,10 @@ export const Route = createFileRoute("/features")({
 
 const features = [
   { icon: Images, title: "Rich recalls", body: "Combine free-form text with one or many images. Layouts adapt automatically — a single photo blooms full-width, a set becomes a clean grid." },
-  { icon: MapPin, title: "Place-aware", body: "Attach a location to anchor a memory to the world. Tap the pin later to open a map and feel exactly where you were." },
-  { icon: Tags, title: "Flexible categories", body: "Tag recalls with the words you'd actually use — 'kyoto-2024', 'work-ideas', 'sourdough'. Browse a category like a small private exhibition." },
-  { icon: Search, title: "Search that just works", body: "One search bar across text, captions, places, and tags. Type a fragment and the right recall floats to the top." },
+  { icon: MapPin, title: "Place-aware", body: "Attach a location to anchor a Recall to the world. Tap the pin later to open a map and remember exactly where you were." },
+  { icon: Tags, title: "Flexible categories", body: "Describe your cateogry and let Recall do the rest. Browse a category like a small private exhibition." },
+  { icon: Search, title: "Search that just works", body: "One search bar across text, captions, places, and tags. Type a fragment, ask a question and the right Recall floats to the top." },
   { icon: Shield, title: "Yours alone", body: "Your recalls belong to you. Private by default, encrypted in transit, and never sold or scanned for ads." },
-  { icon: Sparkles, title: "Quiet by design", body: "No streaks. No feed. No notifications begging for your attention. Just a place to put things down and find them later." },
 ];
 
 function FeaturesPage() {
@@ -34,7 +33,7 @@ function FeaturesPage() {
         <header className="max-w-2xl">
           <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Built for the way you remember.</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Recall keeps the small details together — the words, the picture, the place — so you can find them when they matter.
+            Recall keeps the small details together — so you can find them when they matter.
           </p>
         </header>
         <div className="mt-14 grid gap-8 md:grid-cols-2">
