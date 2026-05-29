@@ -33,7 +33,7 @@ function Index() {
                 Capture anything. <span className="text-primary">Recall it later.</span>
               </h1>
               <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-                Recall is your second brain for anything you want to remember — a thought, a URL, an Insta post, photos, a place. Save it in seconds. Recall it later.
+                Recall is your second brain for anything you want to remember — a thought, a website, that Insta post, some photos, a place. Save it in seconds. Recall it later.
               </p>
               <div className="mt-8 flex flex-wrap gap-3" id="get-app">
                 <a
@@ -66,17 +66,19 @@ function Index() {
         <section className="border-y border-border/60 bg-secondary/30">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Everything a memory needs.</h2>
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Everything your memory needs.</h2>
               <p className="mt-3 text-muted-foreground">
-                A Recall is more than a note. Add the words, the picture, the place — keep them together.
+                A Recall is more than just a note. Add the words, the pictures, tag the place, mention the people — keep it all together.
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: Images, title: "Text + images", body: "Write a thought. Attach one or many photos. No fuss." },
-                { icon: MapPin, title: "A place", body: "Add a location so you remember where it happened." },
+                { icon: Images, title: "Text + images", body: "Write a thought. Attach photos. No fuss." },
+                { icon: MapPin, title: "A place", body: "Pin a location so you remember where it happened." },
+                { icon: Link, title: "Links", body: "Add a URL and the content will be available for you to Recall." },
+                { icon: People, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
                 { icon: Tags, title: "Categories", body: "Describe your category, let Recall keep the memories organised." },
-                { icon: Search, title: "Instant search", body: "Ask a question, let Recall do the answering." },
+                { icon: Search, title: "Instant search", body: "Ask a question, Recall does the answering." },
               ].map((f) => (
                 <div key={f.title} className="rounded-xl border border-border bg-card p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -98,7 +100,7 @@ function Index() {
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               { n: "01", t: "Create", d: "Add a Recall - a note, a URL, some photos, a location." },
-              { n: "02", t: "Recall", d: "Search anything — a word, a place, a feeling. It surfaces." },
+              { n: "02", t: "Recall", d: "Search anything — a word, that place, those people, ask a question. It surfaces." },
             ].map((s) => (
               <li key={s.n} className="border-l-2 border-primary pl-5">
                 <div className="text-sm font-mono text-primary">{s.n}</div>
