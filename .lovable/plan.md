@@ -1,40 +1,51 @@
+
 ## Goal
 
-Apply the attached `commonStyles.ts` (dark theme, coral/pink accent, Geist font) as the website's brand system, so the marketing site matches the Recall app's visual identity.
+Add a new "Use Cases for Recall" section to `src/routes/index.tsx`, placed between the existing "What is a Recall?" section and the "How it works" section. The section uses the existing shadcn `Carousel` component (`src/components/ui/carousel.tsx`, embla-carousel) to slide through 7 use-case cards. Each slide has a generated brand-matching image plus two short text sub-sections.
 
-## Changes
+## Use cases (7 slides)
 
-### 1. Design tokens — `src/styles.css`
-Rewrite `:root` to be dark-by-default using oklch equivalents of the app palette:
-- `--background` ← `#1A1A1A`
-- `--card` / `--popover` ← `#2A2A2A`
-- `--secondary` / `--muted` ← `#242424`
-- `--foreground` ← `#FFFFFF`, `--muted-foreground` ← `#B0B0B0`
-- `--primary` ← `#FF6B7A` (coral), `--primary-foreground` ← `#FFFFFF`
-- `--accent` ← coral at 15% over card
-- `--border` / `--input` ← `#3A3A3A`
-- `--ring` ← coral
-- `--destructive` ← `#FF3B30`
-- `--radius` stays `0.625rem` (cards use 8–12px in the app — close enough)
-Keep `.dark` block in sync (mirror the new tokens) so toggling theme doesn't break.
+For each, generate a dark-themed image styled like the current `hero-stack.jpg` (charcoal background, coral `#FF6B7A` accents, layered/stacked card composition), saved under `src/assets/`:
 
-### 2. Typography — Geist font
-- Add Geist via `<link>` in `src/routes/__root.tsx` head (Google Fonts: Geist + Geist Mono).
-- In `styles.css`, set `body { font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }` and apply the same stack as a Tailwind base on `html`.
+1. Inventory Management — `use-case-inventory.jpg`
+2. Ideas — `use-case-ideas.jpg`
+3. Receipts — `use-case-receipts.jpg`
+4. Lists — `use-case-lists.jpg`
+5. Wines — `use-case-wines.jpg`
+6. Cookbooks I own — `use-case-cookbooks.jpg`
+7. Things to do — `use-case-todo.jpg`
 
-### 3. Hero image
-Current `hero-stack.jpg` is warm/cream-toned and will clash with the dark coral brand. Regenerate it as a dark-mode composition (charcoal background, coral accents, stack of cards: note + photo + map pin) and overwrite `src/assets/hero-stack.jpg`.
+Use `imagegen--generate_image` (fast tier, 1280x960, .jpg) with prompts matched to the existing hero style.
 
-### 4. Component polish (token-only, no structural changes)
-Most components already use semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`, etc.), so the token swap re-skins them automatically. Spot-fixes:
-- `src/components/SiteHeader.tsx` — logo tile already `bg-primary`; verify contrast on dark.
-- `src/routes/index.tsx` CTA band uses `bg-primary` with `text-primary-foreground` — keep, but soften the hero glow (`bg-accent/40 blur-2xl`) which will now be coral-tinted on dark.
-- Feature card icon chips (`bg-primary/10 text-primary`) translate fine to dark.
-- Footer `bg-secondary/40` becomes a subtle dark band — good.
+## Slide layout
 
-No layout/markup changes beyond these; the design system change drives the rebrand.
+Each `CarouselItem` renders a card on `bg-card border border-border rounded-2xl`, two-column on `md+`, stacked on mobile:
+
+- Left: the generated image, `rounded-xl border border-border`
+- Right: title (`text-2xl font-semibold`) + two sub-sections stacked:
+  - **The use case** — ~60–100 word description of what people capture for this use case
+  - **Recall it** — ~60–100 word example of how to search/ask Recall to retrieve it (e.g. "Ask: 'which Bordeaux did I open last summer?'")
+
+Each sub-section gets a small coral eyebrow label (`text-xs font-mono uppercase text-primary`) above its paragraph for hierarchy.
+
+## Carousel wiring
+
+- Wrap slides in `<Carousel opts={{ align: "start", loop: true }}>` with `CarouselContent` + 7 `CarouselItem`s.
+- `CarouselItem` uses `basis-full` (one slide visible at a time — copy is long, so single-slide reads better than multi-slide).
+- Include `CarouselPrevious` / `CarouselNext` arrows; on mobile they tuck inside the card edges via responsive classes.
+- Section header mirrors existing sections: `text-3xl md:text-4xl font-semibold` title "Use cases for Recall" + muted-foreground subtitle.
+
+## Technical notes
+
+- Imports to add in `src/routes/index.tsx`:
+  - `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` from `@/components/ui/carousel`
+  - 7 image imports from `@/assets/use-case-*.jpg`
+- No new routes, no new components extracted — keeps the change scoped to `index.tsx` + 7 new asset files.
+- All styling via existing semantic tokens (`bg-card`, `text-primary`, `border-border`, etc.) — matches current dark coral brand.
+- Section placement: insert immediately after the closing `</section>` of "What is a Recall?" (the `border-y border-border/60 bg-secondary/30` block) and before the `#how` section.
 
 ## Out of scope
-- No new pages or content changes.
-- No light/dark toggle (site becomes dark-only, matching the app).
-- No animation/motion additions.
+
+- No changes to other routes, header, footer, or design tokens.
+- No autoplay plugin (keep manual nav for readability).
+- No copy edits to existing sections.
