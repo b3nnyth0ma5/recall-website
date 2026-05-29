@@ -20,8 +20,8 @@ export const Route = createFileRoute("/features")({
 const features = [
   { icon: Images, title: "Rich recalls", body: "Combine free-form text with one or many images. Layouts adapt automatically — a single photo blooms full-width, a set becomes a clean grid." },
   { icon: MapPin, title: "Place-aware", body: "Attach a location to anchor a Recall to the world. Tap the pin later to open a map and remember exactly where you were." },
-  { icon: Tags, title: "Flexible categories", body: "Describe your cateogry and let Recall do the rest. Browse a category like a small private exhibition." },
-  { icon: Search, title: "Search that just works", body: "One search bar across text, captions, places, and tags. Type a fragment, ask a question and the right Recall floats to the top." },
+  { icon: Tags, title: "Flexible categories", body: "Describe your category; be as specific or vague as you want and let Recall do the rest." },
+  { icon: Search, title: "Search that just works", body: "Search for a specific Recall, a collection of Recalls...or an answer to a question that's across multiple Recalls. Just ask!" },
   { icon: Shield, title: "Yours alone", body: "Your recalls belong to you. Private by default, encrypted in transit, and never sold or scanned for ads." },
 ];
 
