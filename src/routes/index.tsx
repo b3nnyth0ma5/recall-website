@@ -2,7 +2,80 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, MapPin, Tags, Images, ArrowRight, FileText, Globe, User, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import heroImage from "@/assets/hero-stack.jpg";
+import useCaseInventory from "@/assets/use-case-inventory.jpg";
+import useCaseIdeas from "@/assets/use-case-ideas.jpg";
+import useCaseReceipts from "@/assets/use-case-receipts.jpg";
+import useCaseLists from "@/assets/use-case-lists.jpg";
+import useCaseWines from "@/assets/use-case-wines.jpg";
+import useCaseCookbooks from "@/assets/use-case-cookbooks.jpg";
+import useCaseTodo from "@/assets/use-case-todo.jpg";
+
+const useCases = [
+  {
+    title: "Inventory Management",
+    image: useCaseInventory,
+    about:
+      "Keep track of what you own and where it lives. Snap a photo of the contents of a drawer, a storage box in the attic, or the shelf in the garage. Add a note about what's inside, condition, or when you bought it. Recall handles the rest — turning piles of stuff into a searchable, organised inventory you can actually find again.",
+    recall:
+      "Ask: 'where did I put the Christmas lights?' or 'do I still have spare HDMI cables?' Recall surfaces the photo, the note, and the location instantly. Search by what's in the image, not just by what you typed — Recall recognises the objects you've stored.",
+  },
+  {
+    title: "Ideas",
+    image: useCaseIdeas,
+    about:
+      "Every fleeting thought, half-formed concept, or shower-time epiphany — captured before it slips away. Jot down a sentence, dictate a voice memo, snap a sketch on a napkin. Recall preserves the spark and the context: when you had it, where you were, what triggered it.",
+    recall:
+      "Ask: 'what was that idea I had about the side project last month?' or 'show me everything I noted down about pricing.' Recall connects related ideas across time and surfaces the thread you were pulling on — even if you've forgotten the exact words.",
+  },
+  {
+    title: "Receipts",
+    image: useCaseReceipts,
+    about:
+      "Never lose a receipt again. Snap it the moment you're handed one — paper, email, or screen. Recall reads the merchant, the amount, the items and the date automatically, so you don't have to type anything. Expense reports, warranties, returns and tax season all get instantly easier.",
+    recall:
+      "Ask: 'how much did I spend on coffee last month?' or 'find the receipt from the hardware store in June.' Recall surfaces the image and the extracted details, ready to forward, file or claim.",
+  },
+  {
+    title: "Lists",
+    image: useCaseLists,
+    about:
+      "Shopping lists, packing lists, gift ideas, books to read, films to watch. All the running tallies that live on scraps of paper and half-finished notes apps — finally in one place. Add items in seconds, with photos or links if you want the extra context.",
+    recall:
+      "Ask: 'what's on my packing list for skiing?' or 'what books did I want to read this summer?' Recall pulls up the list, lets you check things off, and remembers what you finished — so the next time you start a similar list, it can suggest items.",
+  },
+  {
+    title: "Wines",
+    image: useCaseWines,
+    about:
+      "That bottle you loved at dinner. The one your friend recommended. The label you photographed at the vineyard. Snap a picture of the bottle and add a tasting note — even just 'liked it, peppery.' Recall pulls out the producer, vintage, and region from the label automatically.",
+    recall:
+      "Ask: 'which Bordeaux did I open last summer?' or 'show me the reds I rated highly under £20.' Recall finds the bottle, the note, the place — perfect for the next restaurant order or wine shop visit.",
+  },
+  {
+    title: "Cookbooks I own",
+    image: useCaseCookbooks,
+    about:
+      "Your physical cookbook shelf, made searchable. Snap the cover and a few favourite pages from each book. Recall indexes the recipes, ingredients and techniques inside — so a wall of cookbooks becomes a personal recipe database you can actually use mid-week.",
+    recall:
+      "Ask: 'which of my books has a good roast chicken recipe?' or 'what can I make with aubergines tonight?' Recall points you to the exact book and page — no more flipping through ten cookbooks to find the one you remember.",
+  },
+  {
+    title: "Things to do",
+    image: useCaseTodo,
+    about:
+      "The restaurant a friend mentioned. The hiking trail you saw on Instagram. The exhibition closing next month. All the 'we should do that sometime' moments — captured with a link, a photo, or a pinned location, so they don't fade into vague intentions.",
+    recall:
+      "Ask: 'what restaurants did I save in Lisbon?' or 'things to do this weekend nearby.' Recall surfaces ideas by place, by season, or by who suggested them — turning a backlog of intentions into actual plans.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -91,6 +164,53 @@ function Index() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="use-cases" className="border-b border-border/60 scroll-mt-20">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Use cases for Recall</h2>
+              <p className="mt-3 text-muted-foreground">
+                A few of the things people use Recall for. Slide through to see how it works in practice.
+              </p>
+            </div>
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              className="mt-12 px-12 md:px-14"
+            >
+              <CarouselContent>
+                {useCases.map((uc) => (
+                  <CarouselItem key={uc.title}>
+                    <article className="rounded-2xl border border-border bg-card p-6 md:p-8">
+                      <div className="grid gap-8 md:grid-cols-2 md:items-center">
+                        <img
+                          src={uc.image}
+                          alt={`Illustration for the ${uc.title} use case`}
+                          width={1280}
+                          height={960}
+                          loading="lazy"
+                          className="rounded-xl border border-border"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">{uc.title}</h3>
+                          <div className="mt-6">
+                            <div className="text-xs font-mono uppercase tracking-wider text-primary">The use case</div>
+                            <p className="mt-2 text-sm text-muted-foreground md:text-base">{uc.about}</p>
+                          </div>
+                          <div className="mt-6">
+                            <div className="text-xs font-mono uppercase tracking-wider text-primary">Recall it</div>
+                            <p className="mt-2 text-sm text-muted-foreground md:text-base">{uc.recall}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 md:-left-2" />
+              <CarouselNext className="right-0 md:-right-2" />
+            </Carousel>
           </div>
         </section>
 
