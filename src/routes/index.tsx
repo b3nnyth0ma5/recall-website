@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Search, MapPin, Tags, Images, ArrowRight, FileText } from "lucide-react";
+import { Search, MapPin, Tags, Images, ArrowRight, FileText, Globe, User, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/hero-stack.jpg";
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Recall — Capture anything. Recall it later." },
       { name: "description", content: "Recall is your second brain. Save text, links, photos or places. When you need it, Recall it!" },
-      { property: "og:title", content: "Recall — Capture anythin. Recall it later." },
+      { property: "og:title", content: "Recall — Capture anything. Recall it later." },
       { property: "og:description", content: "Recall is your second brain. Save text, links, photos or places. When you need it, Recall it!" },
       { property: "og:url", content: "/" },
     ],
@@ -37,7 +37,7 @@ function Index() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3" id="get-app">
                 <a
-                  href="https://apps.apple.com/au/app/instagram/id389801252"
+                  href="/"
                   className="inline-flex h-11 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
                   Coming soon
@@ -66,19 +66,20 @@ function Index() {
         <section className="border-y border-border/60 bg-secondary/30">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Everything your memory needs.</h2>
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What is a Recall?</h2>
               <p className="mt-3 text-muted-foreground">
-                A Recall is more than just a note. Add the words, the pictures, tag the place, mention the people — keep it all together.
+                A Recall is more than just a note. It's everything your memory needs — kept in your second brain.
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: FileText, title: "Text", body: "Write a thought, an observation, some notes - anything." },
-                { icon: Images, title: "Images", body: "Attach images. Recall will scan and analyse them; ready for when you need it." },
+                { icon: FileText, title: "Text", body: "Write a thought, an observation, some notes - anything really." },
+                { icon: Images, title: "Images", body: "Attach images. Recall will analyse them; ready for when you need anything from them." },
                 { icon: MapPin, title: "A place", body: "Pin a location so you remember where it happened." },
-                { icon: MapPin, title: "Links", body: "Add a URL and the content will be available for you to Recall." },
-                { icon: MapPin, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
-                { icon: Tags, title: "Categories", body: "Describe your category, let Recall keep the memories organised." },
+                { icon: Globe, title: "Links", body: "Include a URL and the content will be available for you to Recall." },
+                { icon: User, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
+                { icon: Tags, title: "Categories", body: "Create a category just be describing it. Recall keeps everything organised." },
+                { icon: MessageCircle, title: "Chat", body: "Chat with your Recall; interrogate it, get it to look up information on the web, come back to it later." },
                 { icon: Search, title: "Instant search", body: "Ask a question, Recall does the answering." },
               ].map((f) => (
                 <div key={f.title} className="rounded-xl border border-border bg-card p-6">
@@ -115,11 +116,11 @@ function Index() {
         <section className="mx-auto max-w-6xl px-6 pb-24">
           <div className="rounded-2xl bg-primary px-8 py-12 text-primary-foreground md:px-14 md:py-16">
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Start keeping the things you don't want to forget.
+              The smart way to never forget
             </h2>
             
             <a
-              href="https://apps.apple.com/au/app/instagram/id389801252"
+              href="/"
               className="mt-7 inline-flex h-11 items-center rounded-md bg-background px-6 text-sm font-medium text-foreground hover:bg-background/90"
             >
               Coming soon
