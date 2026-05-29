@@ -75,8 +75,8 @@ function Index() {
               {[
                 { icon: Images, title: "Text + images", body: "Write a thought. Attach photos. No fuss." },
                 { icon: MapPin, title: "A place", body: "Pin a location so you remember where it happened." },
-                { icon: Link, title: "Links", body: "Add a URL and the content will be available for you to Recall." },
-                { icon: People, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
+                { icon: MapPin, title: "Links", body: "Add a URL and the content will be available for you to Recall." },
+                { icon: MapPin, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
                 { icon: Tags, title: "Categories", body: "Describe your category, let Recall keep the memories organised." },
                 { icon: Search, title: "Instant search", body: "Ask a question, Recall does the answering." },
               ].map((f) => (
