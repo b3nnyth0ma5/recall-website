@@ -144,12 +144,6 @@ function Index() {
                 >
                   Coming soon
                 </a>
-                <Link
-                  to="/features"
-                  className="inline-flex h-11 items-center rounded-md border border-border bg-card px-6 text-sm font-medium hover:bg-accent"
-                >
-                  See features <ArrowRight className="ml-1.5 h-4 w-4" />
-                </Link>
               </div>
             </div>
             <div className="relative">
