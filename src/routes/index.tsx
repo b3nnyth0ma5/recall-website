@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Search, MapPin, Tags, Images, ArrowRight } from "lucide-react";
+import { Search, MapPin, Tags, Images, ArrowRight, FileText } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImage from "@/assets/hero-stack.jpg";
@@ -73,7 +73,8 @@ function Index() {
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: Images, title: "Text + images", body: "Write a thought. Attach photos. No fuss." },
+                { icon: FileText, title: "Text", body: "Write a thought, an observation, some notes - anything." },
+                { icon: Images, title: "Images", body: "Attach images. Recall will scan and analyse them; ready for when you need it." },
                 { icon: MapPin, title: "A place", body: "Pin a location so you remember where it happened." },
                 { icon: MapPin, title: "Links", body: "Add a URL and the content will be available for you to Recall." },
                 { icon: MapPin, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
