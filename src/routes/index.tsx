@@ -167,6 +167,53 @@ function Index() {
           </div>
         </section>
 
+        <section id="use-cases" className="border-b border-border/60 scroll-mt-20">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Use cases for Recall</h2>
+              <p className="mt-3 text-muted-foreground">
+                A few of the things people use Recall for. Slide through to see how it works in practice.
+              </p>
+            </div>
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              className="mt-12 px-12 md:px-14"
+            >
+              <CarouselContent>
+                {useCases.map((uc) => (
+                  <CarouselItem key={uc.title}>
+                    <article className="rounded-2xl border border-border bg-card p-6 md:p-8">
+                      <div className="grid gap-8 md:grid-cols-2 md:items-center">
+                        <img
+                          src={uc.image}
+                          alt={`Illustration for the ${uc.title} use case`}
+                          width={1280}
+                          height={960}
+                          loading="lazy"
+                          className="rounded-xl border border-border"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">{uc.title}</h3>
+                          <div className="mt-6">
+                            <div className="text-xs font-mono uppercase tracking-wider text-primary">The use case</div>
+                            <p className="mt-2 text-sm text-muted-foreground md:text-base">{uc.about}</p>
+                          </div>
+                          <div className="mt-6">
+                            <div className="text-xs font-mono uppercase tracking-wider text-primary">Recall it</div>
+                            <p className="mt-2 text-sm text-muted-foreground md:text-base">{uc.recall}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 md:-left-2" />
+              <CarouselNext className="right-0 md:-right-2" />
+            </Carousel>
+          </div>
+        </section>
+
         <section id="how" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-20">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">How it works</h2>
