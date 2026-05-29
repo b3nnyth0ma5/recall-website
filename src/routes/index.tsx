@@ -93,7 +93,7 @@ function Index() {
         <section id="how" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-20">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">How it works</h2>
-            <p className="mt-3 text-muted-foreground">Two steps> It's all you need.</p>
+            <p className="mt-3 text-muted-foreground">Two steps. It's all you need.</p>
           </div>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
