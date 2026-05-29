@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Search, MapPin, Tags, Images, ArrowRight, FileText, Globe, User, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -6,9 +7,9 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-stack.jpg";
 import useCaseInventory from "@/assets/use-case-inventory.jpg";
 import useCaseIdeas from "@/assets/use-case-ideas.jpg";
@@ -17,6 +18,7 @@ import useCaseLists from "@/assets/use-case-lists.jpg";
 import useCaseWines from "@/assets/use-case-wines.jpg";
 import useCaseCookbooks from "@/assets/use-case-cookbooks.jpg";
 import useCaseTodo from "@/assets/use-case-todo.jpg";
+import useCaseMisc from "@/assets/use-case-misc.jpg";
 
 const useCases = [
   {
@@ -75,6 +77,14 @@ const useCases = [
     recall:
       "Ask: 'what restaurants did I save in Lisbon?' or 'things to do this weekend nearby.' Recall surfaces ideas by place, by season, or by who suggested them — turning a backlog of intentions into actual plans.",
   },
+  {
+    title: "Miscellaneous",
+    image: useCaseMisc,
+    about:
+      "Everything that doesn't fit a neat category. A serial number from the back of an appliance. A parking spot photo. A Wi-Fi password scribbled on a coaster. A quote you liked. The bits and pieces of life that don't belong in a notes app but you really do need later — Recall keeps them all in one place, with whatever context you add.",
+    recall:
+      "Ask: 'what was the Wi-Fi at that café?' or 'find the serial number for the washing machine.' Recall surfaces the photo or note instantly — even when you can't remember exactly what you saved or when, just what it was about.",
+  },
 ];
 
 export const Route = createFileRoute("/")({
@@ -92,6 +102,25 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    api.on("reInit", () => {
+      setCount(api.scrollSnapList().length);
+      setCurrent(api.selectedScrollSnap());
+    });
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -176,8 +205,9 @@ function Index() {
               </p>
             </div>
             <Carousel
+              setApi={setApi}
               opts={{ align: "start", loop: true }}
-              className="mt-12 px-12 md:px-14"
+              className="mt-12"
             >
               <CarouselContent>
                 {useCases.map((uc) => (
@@ -208,9 +238,23 @@ function Index() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 md:-left-2" />
-              <CarouselNext className="right-0 md:-right-2" />
             </Carousel>
+            <div className="mt-8 flex justify-center gap-2" role="tablist" aria-label="Use case slides">
+              {Array.from({ length: count }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  role="tab"
+                  aria-label={`Go to slide ${i + 1}`}
+                  aria-selected={current === i}
+                  onClick={() => api?.scrollTo(i)}
+                  className={cn(
+                    "h-2 rounded-full transition-all",
+                    current === i ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50",
+                  )}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
