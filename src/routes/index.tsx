@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Search, MapPin, Tags, Images, ArrowRight, FileText, Globe, User, MessageCircle } from "lucide-react";
+import { Search, MapPin, Tags, Images, FileText, Globe, User, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import {
