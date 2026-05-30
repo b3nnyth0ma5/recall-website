@@ -159,7 +159,7 @@ function Index() {
           </div>
         </section>
 
-        <section className="border-y border-border/60 bg-secondary/30">
+        <section id="what-is-a-recall" className="border-y border-border/60 bg-secondary/30">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What is a Recall?</h2>
