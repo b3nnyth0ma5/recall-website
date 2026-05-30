@@ -22,12 +22,12 @@ import useCaseMisc from "@/assets/use-case-misc.jpg";
 
 const useCases = [
   {
-    title: "Inventory Management",
-    image: useCaseInventory,
+    title: "Wines",
+    image: useCaseWines,
     about:
-      "Keep track of what you own and where it lives. Snap a photo of the contents of a drawer, a storage box in the attic, or the shelf in the garage. Add a note about what's inside, condition, or when you bought it. Recall handles the rest — turning piles of stuff into a searchable, organised inventory you can actually find again.",
+      "That bottle you loved at dinner. The one your friend recommended. The label you photographed at the vineyard. Snap a picture of the bottle and add a tasting note — even just 'liked it, peppery.' Recall pulls out the producer, vintage, and region from the label automatically.",
     recall:
-      "Ask: 'where did I put the Christmas lights?' or 'do I still have spare HDMI cables?' Recall surfaces the photo, the note, and the location instantly. Search by what's in the image, not just by what you typed — Recall recognises the objects you've stored.",
+      "Ask: 'which Bordeaux did I open last summer?' or 'show me the reds I rated highly under £20.' Recall finds the bottle, the note, the place — perfect for the next restaurant order or wine shop visit.",
   },
   {
     title: "Ideas",
@@ -36,6 +36,14 @@ const useCases = [
       "Every fleeting thought, half-formed concept, or shower-time epiphany — captured before it slips away. Jot down a sentence, dictate a voice memo, snap a sketch on a napkin. Recall preserves the spark and the context: when you had it, where you were, what triggered it.",
     recall:
       "Ask: 'what was that idea I had about the side project last month?' or 'show me everything I noted down about pricing.' Recall connects related ideas across time and surfaces the thread you were pulling on — even if you've forgotten the exact words.",
+  },
+  {
+    title: "My things",
+    image: useCaseInventory,
+    about:
+      "Keep track of what you own and where it lives. Snap a photo of the contents of a drawer, a storage box in the attic, or the shelf in the garage. Add a note about what's inside, condition, or when you bought it. Recall handles the rest — turning piles of stuff into a searchable, organised inventory you can actually find again.",
+    recall:
+      "Ask: 'where did I put the Christmas lights?' or 'do I still have spare HDMI cables?' Recall surfaces the photo, the note, and the location instantly. Search by what's in the image, not just by what you typed — Recall recognises the objects you've stored.",
   },
   {
     title: "Receipts",
@@ -54,20 +62,12 @@ const useCases = [
       "Ask: 'what's on my packing list for skiing?' or 'what books did I want to read this summer?' Recall pulls up the list, lets you check things off, and remembers what you finished — so the next time you start a similar list, it can suggest items.",
   },
   {
-    title: "Wines",
-    image: useCaseWines,
-    about:
-      "That bottle you loved at dinner. The one your friend recommended. The label you photographed at the vineyard. Snap a picture of the bottle and add a tasting note — even just 'liked it, peppery.' Recall pulls out the producer, vintage, and region from the label automatically.",
-    recall:
-      "Ask: 'which Bordeaux did I open last summer?' or 'show me the reds I rated highly under £20.' Recall finds the bottle, the note, the place — perfect for the next restaurant order or wine shop visit.",
-  },
-  {
-    title: "Cookbooks I own",
+    title: "My Cookbooks",
     image: useCaseCookbooks,
     about:
-      "Your physical cookbook shelf, made searchable. Snap the cover and a few favourite pages from each book. Recall indexes the recipes, ingredients and techniques inside — so a wall of cookbooks becomes a personal recipe database you can actually use mid-week.",
+      "Your physical cookbook shelf, made searchable. Snap the cover, the recipe index and a few favourite pages from each book. Recall indexes the recipes — so a wall of cookbooks becomes a personal recipe database you can actually use mid-week.",
     recall:
-      "Ask: 'which of my books has a good roast chicken recipe?' or 'what can I make with aubergines tonight?' Recall points you to the exact book and page — no more flipping through ten cookbooks to find the one you remember.",
+      "Ask: 'which of my books has a good roast chicken recipe?' or 'what can I make with aubergines?' Recall points you to the exact book and page — no more flipping through a dozen cookbooks to find the one you remember.",
   },
   {
     title: "Things to do",
@@ -75,7 +75,7 @@ const useCases = [
     about:
       "The restaurant a friend mentioned. The hiking trail you saw on Instagram. The exhibition closing next month. All the 'we should do that sometime' moments — captured with a link, a photo, or a pinned location, so they don't fade into vague intentions.",
     recall:
-      "Ask: 'what restaurants did I save in Lisbon?' or 'things to do this weekend nearby.' Recall surfaces ideas by place, by season, or by who suggested them — turning a backlog of intentions into actual plans.",
+      "Ask: 'what restaurants did I save in Lisbon?' or 'what gig did Elly recommend?' Recall surfaces ideas by place, by season, or by who suggested them — turning a backlog of intentions into actual plans.",
   },
   {
     title: "Miscellaneous",
@@ -167,16 +167,16 @@ function Index() {
                 A Recall is more than just a note. It's everything your memory needs — kept in your second brain.
               </p>
             </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { icon: FileText, title: "Text", body: "Write a thought, an observation, some notes - anything really." },
-                { icon: Images, title: "Images", body: "Attach images. Recall will analyse them; ready for when you need anything from them." },
+                { icon: Images, title: "Images", body: "Attach images. Recall will analyse them; ready when you need anything from them." },
                 { icon: MapPin, title: "A place", body: "Pin a location so you remember where it happened." },
                 { icon: Globe, title: "Links", body: "Include a URL and the content will be available for you to Recall." },
                 { icon: User, title: "People", body: "Recall surfaces and tags people mentioned anywhere - even in the images." },
-                { icon: Tags, title: "Categories", body: "Create a category just be describing it. Recall keeps everything organised." },
-                { icon: MessageCircle, title: "Chat", body: "Chat with your Recall; interrogate it, get it to look up information on the web, come back to it later." },
-                { icon: Search, title: "Instant search", body: "Ask a question, Recall does the answering." },
+                { icon: Tags, title: "Categories", body: "Create a category just by describing it. Recall keeps everything organised." },
+               // { icon: MessageCircle, title: "Chat", body: "Chat with your Recall; interrogate it, get it to look up information on the web, come back to it later." },
+               // { icon: Search, title: "Instant search", body: "Ask a question, Recall does the answering." },
               ].map((f) => (
                 <div key={f.title} className="rounded-xl border border-border bg-card p-6">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -193,9 +193,9 @@ function Index() {
         <section id="use-cases" className="border-b border-border/60 scroll-mt-20">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Use cases for Recall</h2>
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What to use Recall for?</h2>
               <p className="mt-3 text-muted-foreground">
-                A few of the things people use Recall for. Slide through to see how it works in practice.
+                A few of the things people use Recall for. Slide through to see what it could do for you.
               </p>
             </div>
             <Carousel
@@ -259,7 +259,7 @@ function Index() {
           </div>
           <ol className="mt-12 grid gap-8 md:grid-cols-3">
             {[
-              { n: "01", t: "Create", d: "Add a Recall - a note, a URL, some photos, a location." },
+              { n: "01", t: "Create", d: "Add a Recall - some text, a URL, photos, a location." },
               { n: "02", t: "Recall", d: "Search anything — a word, that place, those people, ask a question. It surfaces." },
             ].map((s) => (
               <li key={s.n} className="border-l-2 border-primary pl-5">
