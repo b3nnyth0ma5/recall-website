@@ -19,6 +19,7 @@ import useCaseWines from "@/assets/use-case-wines.jpg";
 import useCaseCookbooks from "@/assets/use-case-cookbooks.jpg";
 import useCaseTodo from "@/assets/use-case-todo.jpg";
 import useCaseMisc from "@/assets/use-case-misc.jpg";
+import useCaseAnything from "@/assets/use-case-anything.jpg";
 
 const useCases = [
   {
@@ -84,6 +85,14 @@ const useCases = [
       "Everything that doesn't fit a neat category. A serial number from the back of an appliance. A parking spot photo. A Wi-Fi password scribbled on a coaster. A quote you liked. The bits and pieces of life that don't belong in a notes app but you really do need later — Recall keeps them all in one place, with whatever context you add.",
     recall:
       "Ask: 'what was the Wi-Fi at that café?' or 'find the serial number for the washing machine.' Recall surfaces the photo or note instantly — even when you can't remember exactly what you saved or when, just what it was about.",
+  },
+  {
+    title: "Literally anything you want",
+    image: useCaseAnything,
+    about:
+      "If it crosses your mind, it belongs in Recall. A dream you don't want to forget. A compliment someone gave you. The colour of paint in a hotel lobby. A funny thing your kid said. The wine your neighbour brought to dinner. Recall has no opinion about what's worth saving — only that you might want it back one day.",
+    recall:
+      "Ask in plain language: 'what was that thing about…?' Recall searches across everything you've ever saved — text, images, places, people, links — and surfaces whatever fits. The more you capture, the more your second brain has to draw on.",
   },
 ];
 
