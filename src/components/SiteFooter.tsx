@@ -7,11 +7,17 @@ export function SiteFooter() {
         <div>
           <div className="font-semibold tracking-tight">Recall</div>
           <p className="mt-2 text-sm text-muted-foreground">
-            A quieter place for the things worth remembering.
+              The smart way to never forget.
           </p>
         </div>
         <div>
           <div className="text-sm font-medium">Product</div>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/" hash="what-is-a-recall" className="hover:text-foreground">What is a Recall?</Link></li>
+          </ul>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/" hash="use-cases" className="hover:text-foreground">What can I use Recall for?</Link></li>
+          </ul>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/" hash="how" className="hover:text-foreground">How it works</Link></li>
           </ul>
