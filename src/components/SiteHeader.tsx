@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookmarkPlus } from "lucide-react";
+import recallLogo from "@/assets/recall-logo.png";
 
 export function SiteHeader() {
   const linkClass = "text-sm text-foreground/70 hover:text-foreground transition-colors";
@@ -7,9 +7,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <BookmarkPlus className="h-4 w-4" />
-          </span>
+          <img
+            src={recallLogo}
+            alt="Recall logo"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+          />
           <span>Recall</span>
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
