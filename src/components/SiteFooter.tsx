@@ -16,7 +16,7 @@ export function SiteFooter() {
             <li><Link to="/" hash="what-is-a-recall" className="hover:text-foreground">What is a Recall?</Link></li>
           </ul>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/" hash="use-cases" className="hover:text-foreground">What can I use Recall for?</Link></li>
+            <li><Link to="/use-cases" hash="use-cases" className="hover:text-foreground">Use Cases for Recall</Link></li>
           </ul>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/" hash="how" className="hover:text-foreground">How it works</Link></li>
