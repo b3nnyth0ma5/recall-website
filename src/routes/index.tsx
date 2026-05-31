@@ -26,9 +26,9 @@ const useCases = [
     title: "Wines",
     image: useCaseWines,
     about:
-      "That bottle you loved at dinner. The one your friend recommended. The label you photographed at the vineyard. Snap a picture of the bottle and add a tasting note — even just 'liked it, peppery.' Recall pulls out the producer, vintage, and region from the label automatically.",
+      "That bottle you loved at dinner. The one your friend recommended. The label you photographed at that vineyard. Snap a picture of the bottle and add a tasting note — even just 'liked it, peppery.' Recall extracts the producer, vintage, and region from the label automatically.",
     recall:
-      "Ask: 'which Bordeaux did I open last summer?' or 'show me the reds I rated highly under £20.' Recall finds the bottle, the note, the place — perfect for the next restaurant order or wine shop visit.",
+      "Ask: 'which Bordeaux did I open last summer?' or 'show me the reds I rated 7/10 or higher.' Recall finds the bottle, the note, the place — perfect for the next restaurant order or wine shop visit.",
   },
   {
     title: "Ideas",
@@ -39,20 +39,20 @@ const useCases = [
       "Ask: 'what was that idea I had about the side project last month?' or 'show me everything I noted down about pricing.' Recall connects related ideas across time and surfaces the thread you were pulling on — even if you've forgotten the exact words.",
   },
   {
-    title: "My things",
+    title: "Things",
     image: useCaseInventory,
     about:
-      "Keep track of what you own and where it lives. Snap a photo of the contents of a drawer, a storage box in the attic, or the shelf in the garage. Add a note about what's inside, condition, or when you bought it. Recall handles the rest — turning piles of stuff into a searchable, organised inventory you can actually find again.",
+      "Keep track of everything you own and where it lives. Snap a photo of the contents of a drawer, a storage box in the attic, or the shelf in the garage. Add a note about what's inside, condition, or when you bought it. Recall handles the rest — turning piles of stuff into a searchable, organised inventory you can actually find again.",
     recall:
       "Ask: 'where did I put the Christmas lights?' or 'do I still have spare HDMI cables?' Recall surfaces the photo, the note, and the location instantly. Search by what's in the image, not just by what you typed — Recall recognises the objects you've stored.",
   },
   {
-    title: "Receipts",
-    image: useCaseReceipts,
+    title: "Literally anything you want",
+    image: useCaseAnything,
     about:
-      "Never lose a receipt again. Snap it the moment you're handed one — paper, email, or screen. Recall reads the merchant, the amount, the items and the date automatically, so you don't have to type anything. Expense reports, warranties, returns and tax season all get instantly easier.",
+      "If it crosses your mind, it belongs in Recall. A dream you don't want to forget. A compliment someone gave you. The colour of paint in a hotel lobby. A funny thing your kid said. The wine your neighbour brought to dinner. Recall has no opinion about what's worth saving — only that you might want it back one day.",
     recall:
-      "Ask: 'how much did I spend on coffee last month?' or 'find the receipt from the hardware store in June.' Recall surfaces the image and the extracted details, ready to forward, file or claim.",
+      "Ask in plain language: 'what was that thing about…?' Recall searches across everything you've ever saved — text, images, places, people, links — and surfaces whatever fits. The more you capture, the more your second brain has to draw on.",
   },
   {
     title: "Lists",
@@ -63,7 +63,7 @@ const useCases = [
       "Ask: 'what's on my packing list for skiing?' or 'what books did I want to read this summer?' Recall pulls up the list, lets you check things off, and remembers what you finished — so the next time you start a similar list, it can suggest items.",
   },
   {
-    title: "My Cookbooks",
+    title: "Cookbooks",
     image: useCaseCookbooks,
     about:
       "Your physical cookbook shelf, made searchable. Snap the cover, the recipe index and a few favourite pages from each book. Recall indexes the recipes — so a wall of cookbooks becomes a personal recipe database you can actually use mid-week.",
@@ -71,12 +71,20 @@ const useCases = [
       "Ask: 'which of my books has a good roast chicken recipe?' or 'what can I make with aubergines?' Recall points you to the exact book and page — no more flipping through a dozen cookbooks to find the one you remember.",
   },
   {
-    title: "Things to do",
+    title: "Activities",
     image: useCaseTodo,
     about:
       "The restaurant a friend mentioned. The hiking trail you saw on Instagram. The exhibition closing next month. All the 'we should do that sometime' moments — captured with a link, a photo, or a pinned location, so they don't fade into vague intentions.",
     recall:
       "Ask: 'what restaurants did I save in Lisbon?' or 'what gig did Elly recommend?' Recall surfaces ideas by place, by season, or by who suggested them — turning a backlog of intentions into actual plans.",
+  },
+  {
+    title: "Bills & Invoices",
+    image: useCaseReceipts,
+    about:
+      "Never lose a receipt again. Snap it the moment you're handed one — paper, email, or screen. Recall reads the merchant, the amount, the items and the date automatically, so you don't have to type anything. Expense reports, warranties, returns and tax season all get instantly easier.",
+    recall:
+      "Ask: 'how much did I spend on coffee last month?' or 'find the receipt from the hardware store in June.' Recall surfaces the image and the extracted details, ready to forward, file or claim.",
   },
   {
     title: "Miscellaneous",
@@ -85,14 +93,6 @@ const useCases = [
       "Everything that doesn't fit a neat category. A serial number from the back of an appliance. A parking spot photo. A Wi-Fi password scribbled on a coaster. A quote you liked. The bits and pieces of life that don't belong in a notes app but you really do need later — Recall keeps them all in one place, with whatever context you add.",
     recall:
       "Ask: 'what was the Wi-Fi at that café?' or 'find the serial number for the washing machine.' Recall surfaces the photo or note instantly — even when you can't remember exactly what you saved or when, just what it was about.",
-  },
-  {
-    title: "Literally anything you want",
-    image: useCaseAnything,
-    about:
-      "If it crosses your mind, it belongs in Recall. A dream you don't want to forget. A compliment someone gave you. The colour of paint in a hotel lobby. A funny thing your kid said. The wine your neighbour brought to dinner. Recall has no opinion about what's worth saving — only that you might want it back one day.",
-    recall:
-      "Ask in plain language: 'what was that thing about…?' Recall searches across everything you've ever saved — text, images, places, people, links — and surfaces whatever fits. The more you capture, the more your second brain has to draw on.",
   },
 ];
 
