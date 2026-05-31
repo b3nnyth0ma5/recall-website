@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-stack.jpg";
 import { buildCarouselSlots } from "@/data/use-cases";
+import { formatRecall } from "@/lib/format-recall";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -154,7 +155,7 @@ function Index() {
                             </div>
                             <div className="mt-6">
                               <div className="text-xs font-mono uppercase tracking-wider text-primary">Recall it</div>
-                              <p className="mt-2 text-sm text-muted-foreground md:text-base">{slot.useCase.recall}</p>
+                              <p className="mt-2 text-sm text-muted-foreground md:text-base">{formatRecall(slot.useCase.recall)}</p>
                             </div>
                           </div>
                         </div>

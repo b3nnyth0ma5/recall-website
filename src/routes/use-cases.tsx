@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { allUseCases } from "@/data/use-cases";
 import { cn } from "@/lib/utils";
+import { formatRecall } from "@/lib/format-recall";
 
 export const Route = createFileRoute("/use-cases")({
   component: UseCasesPage,
@@ -89,7 +90,7 @@ function UseCasesPage() {
                             Recall it
                           </div>
                           <p className="mt-2 text-sm text-muted-foreground md:text-base">
-                            {uc.recall}
+                            {formatRecall(uc.recall)}
                           </p>
                         </div>
                       </div>
