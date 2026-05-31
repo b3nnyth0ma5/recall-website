@@ -65,6 +65,15 @@ export const useCases: UseCase[] = [
       "Ask: 'where did I put the Christmas lights?' or 'do I still have spare HDMI cables?' Recall surfaces the photo, the note, and the location instantly. Search by what's in the image, not just by what you typed — Recall recognises the objects you've stored.",
   },
   {
+    id: "dream-home",
+    title: "Dream Home",
+    image: useCaseDreamhome,
+    about:
+      "Every interior you've fallen in love with, every paint colour that caught your eye, every fixture and floorplan idea — collected as you find them. Snap pages from magazines, save Instagram posts, pin a tile shop on the map, jot a sentence about the kitchen you stayed in on holiday.",
+    recall:
+      "Ask: 'what was that green I liked for the bedroom?' or 'show me the bathrooms I've saved.' Recall pulls the photos, the notes and the places together — turning a scattered moodboard into something you can actually take to a builder.",
+  },
+  {
     id: "lists",
     title: "Lists",
     image: useCaseLists,
@@ -84,7 +93,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: "activities",
-    title: "Activities",
+    title: "Things to do",
     image: useCaseTodo,
     about:
       "The restaurant a friend mentioned. The hiking trail you saw on Instagram. The exhibition closing next month. All the 'we should do that sometime' moments — captured with a link, a photo, or a pinned location, so they don't fade into vague intentions.",
@@ -99,6 +108,15 @@ export const useCases: UseCase[] = [
       "Never lose a receipt again. Snap it the moment you're handed one — paper, email, or screen. Recall reads the merchant, the amount, the items and the date automatically, so you don't have to type anything. Expense reports, warranties, returns and tax season all get instantly easier.",
     recall:
       "Ask: 'how much did I spend on coffee last month?' or 'find the receipt from the hardware store in June.' Recall surfaces the image and the extracted details, ready to forward, file or claim.",
+  },
+  {
+    id: "important-dates",
+    title: "Important Dates",
+    image: useCaseDates,
+    about:
+      "Birthdays, anniversaries, the day you started a new job, when the boiler was last serviced. The dates you'll wish you remembered, plus the context: who, what, where, and what you did last time.",
+    recall:
+      "Ask: 'what did I get Mum last year?' or 'when's our anniversary?' Recall surfaces the date and everything attached to it — so you never duplicate a gift, miss a milestone, or forget the year the car was bought.",
   },
   {
     id: "miscellaneous",
@@ -119,15 +137,6 @@ export const useCases: UseCase[] = [
       "Ask: 'what gin do I have that works for a Negroni?' or 'which whisky did Dad bring last Christmas?' Recall surfaces the bottle, your tasting note and what's still left — perfect for pouring guests or restocking before a dinner party.",
   },
   {
-    id: "dream-home",
-    title: "Dream Home",
-    image: useCaseDreamhome,
-    about:
-      "Every interior you've fallen in love with, every paint colour that caught your eye, every fixture and floorplan idea — collected as you find them. Snap pages from magazines, save Instagram posts, pin a tile shop on the map, jot a sentence about the kitchen you stayed in on holiday.",
-    recall:
-      "Ask: 'what was that green I liked for the bedroom?' or 'show me the bathrooms I've saved.' Recall pulls the photos, the notes and the places together — turning a scattered moodboard into something you can actually take to a builder.",
-  },
-  {
     id: "pets",
     title: "Pets",
     image: useCasePets,
@@ -146,15 +155,6 @@ export const useCases: UseCase[] = [
       "Ask: 'what was the artist for the floral piece I saved?' or 'show me the references for my forearm idea.' Recall pulls the whole moodboard together so you walk into the appointment with everything in one place.",
   },
   {
-    id: "important-dates",
-    title: "Important Dates",
-    image: useCaseDates,
-    about:
-      "Birthdays, anniversaries, the day you started a new job, when the boiler was last serviced. The dates you'll wish you remembered, plus the context: who, what, where, and what you did last time.",
-    recall:
-      "Ask: 'what did I get Mum last year?' or 'when's our anniversary?' Recall surfaces the date and everything attached to it — so you never duplicate a gift, miss a milestone, or forget the year the car was bought.",
-  },
-  {
     id: "masks",
     title: "Mask Collection",
     image: useCaseMasks,
@@ -162,6 +162,15 @@ export const useCases: UseCase[] = [
       "Every mask in your collection — Venetian, Noh, ceremonial, modern. Snap each one, note where you bought it, who made it, what it's made of, and any history that came with it. The collection becomes a living catalogue instead of a row of shelves.",
     recall:
       "Ask: 'which masks did I buy in Venice?' or 'show me the ones with feathers.' Recall pulls the photos and the provenance together — perfect for insurance, for showing visitors, or for tracking what's still on your wishlist.",
+  },
+  {
+    id: "plants",
+    title: "Plants",
+    image: useCasePlants,
+    about:
+      "Every plant in the house, plus the ones you've killed and the ones you want to try. Snap each pot, note the species, when you last watered, when you repotted, the spot it likes. Recall keeps the care notes attached to the plant instead of on a sticky note that's long gone.",
+    recall:
+      "Ask: 'when did I last feed the monstera?' or 'which plants are safe for the cat?' Recall surfaces the schedule, the photos and the notes — turning houseplant chaos into something that actually thrives.",
   },
   {
     id: "collectibles",
@@ -180,15 +189,6 @@ export const useCases: UseCase[] = [
       "Every ring, chain, pair of earrings and family heirloom — photographed, valued and quietly catalogued. Add the maker, the metal, the stone, the story behind it. Useful for insurance, useful for inheritance, useful for finding the earring back you swear you put somewhere.",
     recall:
       "Ask: 'where's Grandma's brooch?' or 'show me the silver pieces.' Recall surfaces the photo, the location and the details — ready for an insurance claim, a valuation or just finding what to wear tonight.",
-  },
-  {
-    id: "plants",
-    title: "Plants",
-    image: useCasePlants,
-    about:
-      "Every plant in the house, plus the ones you've killed and the ones you want to try. Snap each pot, note the species, when you last watered, when you repotted, the spot it likes. Recall keeps the care notes attached to the plant instead of on a sticky note that's long gone.",
-    recall:
-      "Ask: 'when did I last feed the monstera?' or 'which plants are safe for the cat?' Recall surfaces the schedule, the photos and the notes — turning houseplant chaos into something that actually thrives.",
   },
   {
     id: "upcoming-events",
