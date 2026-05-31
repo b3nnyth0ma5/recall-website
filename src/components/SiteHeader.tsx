@@ -17,8 +17,7 @@ export function SiteHeader() {
           <span>Recall</span>
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
-          <Link to="/support" className={linkClass} activeProps={{ className: "text-foreground font-medium" }}>Support</Link>
-          <Link to="/privacy" className={linkClass} activeProps={{ className: "text-foreground font-medium" }}>Privacy</Link>
+          <Link to="/use-cases" className={linkClass} activeProps={{ className: "text-foreground font-medium" }}>Use Cases</Link>
         </nav>
         <a
           href="#get-app"
